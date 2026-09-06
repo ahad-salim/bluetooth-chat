@@ -1,0 +1,28 @@
+{
+  "name": "bluetooth-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahad-salim/bluetooth-chat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ahad-salim/bluetooth-chat/issues"
+  },
+  "homepage": "https://github.com/ahad-salim/bluetooth-chat#readme",
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "webbluetooth": "^3.7.0"
+  }
+}
