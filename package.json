@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "client": "node dist/client.js",
+    "server": "node dist/server.js",
+    "server2": "node dist/server.ble-connection.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -20,9 +24,15 @@
   "homepage": "https://github.com/ahad-salim/bluetooth-chat#readme",
   "devDependencies": {
     "@types/node": "^26.4.1",
+    "@types/ws": "^8.18.1",
     "typescript": "^7.0.2"
   },
   "dependencies": {
-    "webbluetooth": "^3.7.0"
+    "@abandonware/bleno": "^0.6.2",
+    "@abandonware/noble": "^1.9.2-26",
+    "@siva7170/ble-connection": "^3.0.0",
+    "bluetooth-serial-port": "^3.0.6",
+    "webbluetooth": "^3.7.0",
+    "ws": "^8.21.3"
   }
 }
