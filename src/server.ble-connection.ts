@@ -1,30 +1,31 @@
-import bleConnection from "@siva7170/ble-connection";
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const bleConnection = require('@siva7170/ble-connection');
 
 const server = new bleConnection.BLEServer();
+const SERVICE_NAME = 'MyBluetoothChat';
 
-// Initialize the server
 server.Initiate();
+console.log('Server initiated.');
 
-// When a client connects
+server.StartServer(SERVICE_NAME);
+console.log(`Server started: "${SERVICE_NAME}"`);
+
 server.OnClientConnected(() => {
-  console.log("✅ Client connected!");
+  console.log('Client connected!');
 });
 
-// When a client disconnects
-server.OnClientDisconnected(() => {
-  console.log("❌ Client disconnected");
-});
-
-// When data is received from the client
 server.OnData((data: string) => {
-  console.log("📩 Received from client:", data);
-
-  // Reply back
-  server.SendData("Hello from Server!");
+  console.log('Received:', data);
+  server.SendData('pong');
+  console.log('Sent: pong');
 });
 
-// Start the server
-server.StartServer("BluetoothChat");
+server.OnClientDisconnected(() => {
+  console.log('Client disconnected.');
+});
 
-console.log("🟢 Bluetooth SPP Server is running...");
-console.log("Waiting for client connection...");
+process.on('SIGINT', () => {
+  server.StopServer();
+  process.exit();
+});

@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "client": "node dist/client.js",
-    "server": "node dist/server.js",
-    "server2": "node dist/server.ble-connection.js",
+    "start": "node dist/tested/bluetoothTest.js",
+    "serial": "node dist/tested/connectTest.js",
+    "server": "node dist/server.ble-connection.js",
+    "client": "node dist/client.ble-connection.js",
+    "serial:server": "node dist/tested/server.js",
+    "serial:client": "node dist/tested/client.js",
     "build": "tsc"
   },
   "repository": {
