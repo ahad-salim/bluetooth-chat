@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/tested/bluetoothTest.js",
     "serial": "node dist/tested/connectTest.js",
-    "server": "node dist/server.ble-connection.js",
+    "server": "node server.js",
     "client": "node dist/client.ble-connection.js",
     "serial:server": "node dist/tested/server.js",
     "serial:client": "node dist/tested/client.js",

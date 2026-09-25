@@ -48,7 +48,9 @@ rl.on('line', text => {
     console.log(`(sent via WS)`);
   }
   if (btClient) {
-    btClient.write(Buffer.from(text, 'utf-8'));
+    btClient.write(Buffer.from(text, 'utf-8'), (err) => {
+      if(err) console.error("BT write error:", err);
+    });
     console.log(`(sent via BT)`);
   }
   if (!wsClient && !btClient) console.log("PC2 not connected yet");
